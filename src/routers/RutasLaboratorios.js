@@ -4,7 +4,7 @@ import {
   obtenerLaboratorios,
   actualizarLaboratorio,
   eliminarLaboratorio,
-} from '../controllers/controladorLaboratorio.js';
+} from '../controllers/ControladorLaboratorio.js';
 import verificarAdmin from '../middlewares/VerificarAdmin.js';
 import { authMiddleware } from '../middlewares/auth.js';
 
