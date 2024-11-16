@@ -5,7 +5,7 @@ mongoose.set('strictQuery', true)
 
 const connection = async()=>{
     try {
-        const {connection} = await mongoose.connect(process.env.MONGODB_URI_LOCAL)
+        const {connection} = await mongoose.connect(process.env.MONGODB_URI)
 
         console.log(`Base de datos conectada ${connection.host} - ${connection.port}`)
     

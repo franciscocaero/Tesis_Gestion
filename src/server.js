@@ -7,7 +7,8 @@ import rutasDocente from './routers/RutasDocente.js';
 import rutasServicio from './routers/RutasAyudanteServicios.js';
 import RutasPasante from './routers/RutasPasante.js';
 import RutasAdmin from './routers/RutasAdmin.js';
-
+import RutasLaboratorios from './routers/RutasLaboratorios.js';
+import RutasSoporte from './routers/RutasSoporte.js';
 const app = express()
 dotenv.config()
 
@@ -22,6 +23,8 @@ app.use('/api/docentes', rutasDocente);
 app.use('/api/servicios', rutasServicio);
 app.use('/api/pasantes', RutasPasante);
 app.use('/api/admin', RutasAdmin);
+app.use('/api/laboratorios', RutasLaboratorios);
+app.use('/api/soporte', RutasSoporte);
 
 
 
