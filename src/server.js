@@ -2,7 +2,6 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 
-
 import rutasTics from './routers/RutasPersonalTIC.js';
 import rutasDocente from './routers/RutasDocente.js';
 import rutasServicio from './routers/RutasAyudanteServicios.js';
@@ -13,14 +12,11 @@ import rutasSoporte from './routers/RutasSoporte.js';
 import rutasObservacion from './routers/RutasObservacion.js';
 import rutasNotas from './routers/RutasNotas.js';
 
-
 dotenv.config();
-
 
 const app = express();
 
-
-app.use(express.json()); 
+app.use(express.json());
 app.use(cors({
     origin: '*', 
     methods: ['GET', 'POST', 'PUT', 'DELETE', 'PATCH'],
@@ -44,22 +40,6 @@ app.use((err, req, res, next) => {
     res.status(500).send({ error: 'Algo salió mal, por favor intenta más tarde.' });
 });
 
+app.use((req, res) => res.status(404).send("Error 404"));
 
-const PORT = process.env.PORT || 3000;
-
-
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en el puerto ${PORT}`);
-});
-
-
-
-
-
-
-app.use((req,res)=>res.status(404).send("Error 404"))
-
-
-
-
-export default  app
+export default app;
